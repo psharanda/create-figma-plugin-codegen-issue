@@ -1,0 +1,46 @@
+{
+  "dependencies": {
+    "@create-figma-plugin/ui": "^2.6.1",
+    "@create-figma-plugin/utilities": "^2.6.1"
+  },
+  "devDependencies": {
+    "@create-figma-plugin/build": "^2.6.1",
+    "@create-figma-plugin/tsconfig": "^2.6.1",
+    "@figma/plugin-typings": "1.79.0",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "build-figma-plugin --typecheck --minify",
+    "watch": "build-figma-plugin --typecheck --watch"
+  },
+  "figma-plugin": {
+    "editorType": [
+      "figma",
+      "dev"
+    ],
+    "permissions": [
+      "currentuser"
+    ],
+    "name": "Menu + Codegen",
+    "capabilities": [
+      "codegen"
+    ],
+    "codegenLanguages": [
+      {
+        "label": "Typescript",
+        "value": "typescript"
+      }
+    ],
+    "main": "src/main.ts",
+    "menu": [
+      {
+        "name": "Feature 1",
+        "main": "src/feature1/main.ts"
+      },
+      {
+        "name": "Feature 2",
+        "main": "src/feature2/main.ts"
+      }
+    ]
+  }
+}
